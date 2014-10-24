@@ -105,7 +105,7 @@ IF(NOT ${SDL_INCLUDE_DIR} MATCHES ".framework")
 # seem to provide SDLmain for compatibility even though they don't
 # necessarily need it.
 FIND_LIBRARY(SDLMAIN_LIBRARY 
-  NAMES SDL2main
+  NAMES SDL2main SDL2_image SDL2_ttf SDL2_mixer
   HINTS
   $ENV{SDLDIR}
   PATH_SUFFIXES lib64 lib

@@ -6,7 +6,7 @@ set(src_files
 
 add_executable(reader ${src_files})
 
-FIND_PACKAGE(SDL REQUIRED SDL2Main)
+FIND_PACKAGE(SDL REQUIRED SDL2Main SDL2_image SDL2_mixer SDL2_ttf)
 
 IF(SDL_FOUND)
 # 加入头文件路径
