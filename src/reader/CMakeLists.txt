@@ -6,12 +6,11 @@ set(src_files
 
 add_executable(reader ${src_files})
 
-FIND_PACKAGE(SDL REQUIRED sdl)
+FIND_PACKAGE(SDL REQUIRED SDL2Main)
 
 IF(SDL_FOUND)
-INCLUDE( ${SDL_USE_FILE} )
 # 加入头文件路径
-INCLUDE_DIRECTORIES( ${SDL_INCLUDE_DIRS} )
+INCLUDE_DIRECTORIES( ${SDL_INCLUDE_DIR} )
 # 加入库文件路径
 LINK_DIRECTORIES( ${SDL_LIB_DIR} )
 #　要加入的库名

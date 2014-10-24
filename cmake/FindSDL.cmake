@@ -72,10 +72,8 @@ FIND_PATH(SDL_INCLUDE_DIR SDL.h
   PATHS
   ~/Library/Frameworks
   /Library/Frameworks
-  /usr/local/include/SDL12
-  /usr/local/include/SDL11 # FreeBSD ports
-  /usr/include/SDL12
-  /usr/include/SDL11
+  /usr/local/include/SDL2
+  /usr/include/SDL2
   /sw # Fink
   /opt/local # DarwinPorts
   /opt/csw # Blastwave
@@ -87,7 +85,7 @@ FIND_PATH(SDL_INCLUDE_DIR SDL.h
 # SDL-1.1 is the name used by FreeBSD ports...
 # don't confuse it for the version number.
 FIND_LIBRARY(SDL_LIBRARY_TEMP 
-  NAMES SDL SDL-1.1
+  NAMES SDL2 
   HINTS
   $ENV{SDLDIR}
   PATH_SUFFIXES lib64 lib
@@ -107,7 +105,7 @@ IF(NOT ${SDL_INCLUDE_DIR} MATCHES ".framework")
 # seem to provide SDLmain for compatibility even though they don't
 # necessarily need it.
 FIND_LIBRARY(SDLMAIN_LIBRARY 
-  NAMES SDLmain SDLmain-1.1
+  NAMES SDL2main
   HINTS
   $ENV{SDLDIR}
   PATH_SUFFIXES lib64 lib
