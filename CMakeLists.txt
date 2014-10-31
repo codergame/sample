@@ -10,7 +10,7 @@ set(RUNTIME_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
-set(LIBRARY_OUTOUPT_PATH ${PROJECT_SOURCE_DIR}/lib)
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
@@ -24,13 +24,15 @@ foreach(file ${cmakefile})
 endforeach()
 
 #子项目
-set(projs 
+set(projs
+	framework
 	editor
-    reader
+	reader
 )
 
 foreach(proj ${projs})
 	set(proj_src_prefix ${src_prefix}/${proj})
 	set(proj_inc_prefix ${inc_prefix}/${proj})
+    include_directories(${proj_inc_prefix})
    	add_subdirectory(${proj_src_prefix})
 endforeach(proj)

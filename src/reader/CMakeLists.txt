@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 3.0)
 
+file(GLOB lua_inc_files ${proj_src_prefix}/lua/*.h)
+
+file(GLOB lua_src_files ${proj_src_prefix}/lua/*.c)
+
 set(src_files
 	${proj_src_prefix}/reader.cpp
 )
 
-add_executable(reader ${src_files})
+add_executable(reader ${src_files} ${lua_inc_files} ${lua_src_files})
+
+target_link_libraries(reader framework)
 
 FIND_PACKAGE(SDL REQUIRED SDL2Main SDL2_image SDL2_mixer SDL2_ttf)
 

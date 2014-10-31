@@ -1,0 +1,5 @@
+#include "Type.h"
+
+NS_FRAMEWORK_BEG
+
+NS_FRAMEWORK_END
